@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plans",
+  "info": {
+    "singularName": "plan",
+    "pluralName": "plans",
+    "displayName": "Plans",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "plan_benefits": {
+      "displayName": "plan_benefits",
+      "type": "component",
+      "repeatable": true,
+      "component": "static.plan-benefits"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Weekly",
+        "Monthly",
+        "Yearly"
+      ]
+    },
+    "price": {
+      "type": "string"
+    },
+    "searches": {
+      "type": "integer"
+    },
+    "saves": {
+      "type": "integer"
+    },
+    "downloads": {
+      "type": "integer"
+    },
+    "stripe_id": {
+      "type": "integer"
+    },
+    "paypal_id": {
+      "type": "integer"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "days": {
+      "type": "integer"
+    },
+    "aisearches": {
+      "type": "integer"
+    }
+  }
+}

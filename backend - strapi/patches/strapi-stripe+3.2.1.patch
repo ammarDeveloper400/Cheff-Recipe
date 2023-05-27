@@ -1,0 +1,93 @@
+diff --git a/node_modules/strapi-stripe/server/services/stripeService.js b/node_modules/strapi-stripe/server/services/stripeService.js
+index 7efdc25..168c272 100644
+--- a/node_modules/strapi-stripe/server/services/stripeService.js
++++ b/node_modules/strapi-stripe/server/services/stripeService.js
+@@ -31,6 +31,7 @@ module.exports = ({ strapi }) => ({
+     try {
+       const stripeSettings = await this.initialize();
+       let stripe;
++      console.log('strapie create product start');
+ 
+       if (stripeSettings.isLiveMode) {
+         stripe = new Stripe(stripeSettings.stripeLiveSecKey);
+@@ -38,13 +39,16 @@ module.exports = ({ strapi }) => ({
+         stripe = new Stripe(stripeSettings.stripeTestSecKey);
+       }
+ 
+-      const product = await stripe.products.create({
+-        name: title,
+-        description,
+-        images: [imageUrl],
+-      });
++      console.log('strapie create product start 2');
++
++      
++      let product = null;
++      console.log('strapie create product start 3');
++
+ 
+       const createproduct = async (productId, priceId, planId) => {
++      console.log('strapie create product start 4');
++
+         const create = await strapi.query('plugin::strapi-stripe.ss-product').create({
+           data: {
+             title,
+@@ -61,10 +65,21 @@ module.exports = ({ strapi }) => ({
+           },
+           populate: true,
+         });
++        console.log('strapie create product start 5');
++
+         return create;
+       };
+ 
+       if (isSubscription) {
++
++        product = await stripe.products.create({
++          name: title,
++          description,
++          images: [imageUrl],
++          type:'service'
++        });
++        console.log('strapie create product start 6');
++
+         const plan = await stripe.plans.create({
+           amount: Math.round(productPrice * 100),
+           currency: stripeSettings.currency,
+@@ -72,17 +87,36 @@ module.exports = ({ strapi }) => ({
+           product: product.id,
+           trial_period_days: trialPeriodDays ? trialPeriodDays : 0,
+         });
++        console.log('strapie create product start 7');
++
+         createproduct(product.id, '', plan.id);
++        console.log('strapie create product start 8');
++
+       } else {
++        product = await stripe.products.create({
++          name: title,
++          description,
++          images: [imageUrl]
++        });
++        console.log('strapie create product start 9');
++
+         const price = await stripe.prices.create({
+           unit_amount: Math.round(productPrice * 100),
+           currency: stripeSettings.currency,
+           product: product.id,
+         });
++        console.log('strapie create product start 10');
++
+         createproduct(product.id, price.id, '');
++        console.log('strapie create product start 11');
++
+       }
++      console.log('strapie create product start 12');
++
+       return product;
+     } catch (error) {
++      console.log('strapie create product start 13');
++
+       console.log(error);
+       throw new ApplicationError(error.message);
+     }

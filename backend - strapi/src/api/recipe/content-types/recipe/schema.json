@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "ingredients": {
+      "type": "richtext"
+    },
+    "optional_ingredients": {
+      "type": "richtext"
+    },
+    "directions": {
+      "type": "richtext"
+    },
+    "nutritional_information": {
+      "type": "richtext"
+    },
+    "note": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sub_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sub-category.sub-category",
+      "inversedBy": "recipes"
+    },
+    "servings": {
+      "type": "richtext"
+    },
+    "cook_time": {
+      "type": "richtext"
+    },
+    "ai": {
+      "type": "boolean",
+      "default": false
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "recipes"
+    },
+    "print": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::print.print",
+      "mappedBy": "recipe"
+    }
+  }
+}

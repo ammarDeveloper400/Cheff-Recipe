@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "saves",
+  "info": {
+    "singularName": "save",
+    "pluralName": "saves",
+    "displayName": "save",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "recipe": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::recipe.recipe"
+    },
+    "user_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "saves"
+    },
+    "trial": {
+      "type": "boolean",
+      "default": true
+    },
+    "subscription": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::subscription.subscription"
+    }
+  }
+}

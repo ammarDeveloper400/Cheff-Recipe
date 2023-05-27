@@ -1,0 +1,23 @@
+const colors={
+    bodybg: "#FDFEFF",
+    bodybgdark: "#1F1F1F",
+    light_text: '#FDFEFF',
+    dark_placeholder: '#5C5C5C',
+    light_placeholder: '#5C5C5C',
+    grey_text: '#717171',
+    dark_text: '#1F1F1F',
+    light_grey: '#F3F4F4',
+    light_grey2: '#D5D9DD',
+    light_grey3: '#DDDFE2',
+    dark_grey: '#262626',
+    dark_grey2: '#8C9299',
+    dark_grey3: '#484848',
+    dark_grey5: '#8C8C8C',
+    dark_grey6: '#353535',
+    dark_grey4: '#161616',
+    primary_color: '#d45b2c',
+    white_color: '#FFFFFF',
+    error_color:"#FC4848",
+    primary_color2: '#D09900',
+}
+export default colors;

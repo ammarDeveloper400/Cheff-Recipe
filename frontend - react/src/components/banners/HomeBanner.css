@@ -1,0 +1,6 @@
+.banner-here{
+    background-image: url('./../../assets/images/here-bg-light.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}

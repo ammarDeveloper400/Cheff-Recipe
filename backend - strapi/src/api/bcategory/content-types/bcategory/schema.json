@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bcategories",
+  "info": {
+    "singularName": "bcategory",
+    "pluralName": "bcategories",
+    "displayName": "bcategory",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "bcategory"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscriptions",
+  "info": {
+    "singularName": "subscription",
+    "pluralName": "subscriptions",
+    "displayName": "Subscription",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "subscriptions"
+    },
+    "plan": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::plan.plan"
+    },
+    "subscribed_at": {
+      "type": "date"
+    },
+    "days": {
+      "type": "integer"
+    },
+    "expires": {
+      "type": "date"
+    },
+    "amount_paid": {
+      "type": "integer"
+    },
+    "saves": {
+      "type": "integer"
+    },
+    "searches": {
+      "type": "integer"
+    },
+    "downloads": {
+      "type": "integer"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "refund_requested": {
+      "type": "boolean"
+    },
+    "refunded": {
+      "type": "boolean"
+    },
+    "refund_rejected": {
+      "type": "boolean"
+    },
+    "refund_msg": {
+      "type": "text"
+    },
+    "upgraded_to": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::subscription.subscription"
+    },
+    "unsubscribe_msg": {
+      "type": "text"
+    },
+    "aisearches": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::aisearch.aisearch",
+      "mappedBy": "subscription"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "freemiums",
+  "info": {
+    "singularName": "freemium",
+    "pluralName": "freemiums",
+    "displayName": "freemium",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "searches": {
+      "type": "integer"
+    },
+    "downloads": {
+      "type": "integer"
+    },
+    "saves": {
+      "type": "integer"
+    },
+    "aisearches": {
+      "type": "integer"
+    }
+  }
+}

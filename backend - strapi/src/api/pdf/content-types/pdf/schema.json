@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "pdfs",
+  "info": {
+    "singularName": "pdf",
+    "pluralName": "pdfs",
+    "displayName": "Pdf"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

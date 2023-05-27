@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::section.section"
+    },
+    "main_title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "sub_sub_title": {
+      "type": "string"
+    }
+  }
+}

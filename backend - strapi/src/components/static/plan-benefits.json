@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_static_plan_benefits",
+  "info": {
+    "displayName": "plan_benefits"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "available": {
+      "type": "boolean"
+    }
+  }
+}
