@@ -8,7 +8,7 @@ const utils = require('@strapi/utils');
 const { Configuration, OpenAIApi } = require("openai");
 const { getService } = require('@strapi/plugin-users-permissions/server/utils');
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: "api key here",
 });
 const openai = new OpenAIApi(configuration);
 const { getAbsoluteAdminUrl, getAbsoluteServerUrl, sanitize, NotFoundError } = utils;
